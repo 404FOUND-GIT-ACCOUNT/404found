@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 FOUND | Errors End Here</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+
+    <header class="container">
+        <div class="logo">
+            <p class="logo-text"><span class="res">404</span> FOUND</p>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="links" id="nav">
+            <ul class="linkies">
+                <li><a href="index.html" style="color: #ff0000;">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home-page">
+        <section class="hero">
+            <div class="hero-text">
+                <div class="line">
+                    <span class="highlight">“Errors</span>
+                    <span class="text">are found, fixed and improved.</span>
+                </div>
+                <div class="line">
+                    <span class="highlight">End</span>
+                    <span class="text">of problems with smart development.</span>
+                </div>
+                <div class="line">
+                    <span class="highlight">Here”</span>
+                    <span class="text">begins innovation, quality, and trust.</span>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+        </section>
+
+        <section class="intro-section">
+    <div class="content-limit">
+        <div class="intro-grid">
+            <div class="intro-box reveal">
+                <span class="res">01.</span>
+                <h3>Precision Code</h3>
+                <p>We don't just build; we architect. Every line of code is written to eliminate latency and maximize scalability.</p>
+            </div>
+            <div class="intro-box reveal">
+                <span class="res">02.</span>
+                <h3>User Centric</h3>
+                <p>A beautiful interface is useless if it's hard to navigate. Our UI/UX philosophy puts the user's journey first.</p>
+            </div>
+            <div class="intro-box reveal">
+                <span class="res">03.</span>
+                <h3>Future Proof</h3>
+                <p>We use the latest stacks like Next.js and TypeScript to ensure your project stays relevant for years to come.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="banner-text">
+        <h2>READY TO FIX THE <span class="res">FUTURE?</span></h2>
+        <a href="contact.html" class="neon-outline-btn">START A PROJECT</a>
+    </div>
+</section>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("nav");
+
+        // Toggle mobile menu
+        hamburger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+
+        // Close menu when a link is clicked (useful for single-page feel)
+        document.querySelectorAll('.linkies a').forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("active");
+                hamburger.classList.remove("active");
+            });
+        });
+
+        // Smooth reveal for hero lines on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.line').forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.opacity = "1";
+                    line.style.transform = "translateY(0)";
+                }, 200 * index);
+            });
+        });
+    </script>
+
+    <script>
+        const observerOptions = {
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

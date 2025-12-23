@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | 404 FOUND</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <p class="logo-text"><span class="res">404</span> FOUND</p>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            <nav class="nav-menu" id="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active-link" style="color: #ff0000;">Services</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="services-main">
+        <div class="content-limit">
+            <div class="text-center-box">
+                <h1 class="main-title">OUR <span class="res">SERVICES</span></h1>
+                <p class="description">Current solutions and our roadmap for the future.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card active-service neon-red">
+                    <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                    <h2>Web Development</h2>
+                    <p>High-performance websites built with clean architecture and modern frameworks.</p>
+                    <span class="status-tag">AVAILABLE</span>
+                </div>
+
+                <div class="service-card active-service neon-red">
+                    <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h2>UI/UX Design</h2>
+                    <p>User-centric design systems that focus on visual identity and seamless journeys.</p>
+                    <span class="status-tag">AVAILABLE</span>
+                </div>
+
+                <div class="service-card active-service neon-red">
+                    <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h2>Front-End Alone</h2>
+                    <p>Pixel-perfect conversion of designs into responsive, high-speed codebases.</p>
+                    <span class="status-tag">AVAILABLE</span>
+                </div>
+
+                <div class="service-card future-service">
+                    <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h2>Web Apps & SaaS</h2>
+                    <p>Scalable software platforms designed for complex business logic and growth.</p>
+                    <span class="status-tag upcoming">COMING SOON</span>
+                </div>
+
+                <div class="service-card future-service">
+                    <div class="service-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <h2>Software Dev</h2>
+                    <p>Tailored software solutions to automate and solve enterprise-level challenges.</p>
+                    <span class="status-tag upcoming">PLANNING</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            <span>WEB DEVELOPMENT</span>
+            <span>UI/UX DESIGN</span>
+            <span>FRONT-END</span>
+            <span>SAAS APPS</span>
+            <span>SOFTWARE SOLUTIONS</span>
+            <span>ERROR FIXING</span>
+            <span>WEB DEVELOPMENT</span>
+            <span>UI/UX DESIGN</span>
+            <span>FRONT-END</span>
+            <span>SAAS APPS</span>
+            <span>SOFTWARE SOLUTIONS</span>
+            <span>ERROR FIXING</span>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 404 FOUND. All Rights Reserved.</p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-solid fa-phone"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("nav");
+        hamburger.onclick = () => {
+            nav.classList.toggle("show");
+            hamburger.classList.toggle("open");
+        };
+    </script>
+</body>
+</html>

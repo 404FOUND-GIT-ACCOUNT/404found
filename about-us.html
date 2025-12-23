@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | 404 FOUND</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="about-page">
+    <div class="bg-overlay"></div>
+
+    <header class="container">
+        <div class="logo">
+            <p class="logo-text"><span class="res">404</span> FOUND</p>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="links" id="nav">
+            <ul class="linkies">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about-us.html" style="color: #ff0000;">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-content">
+        <section class="parallax-section">
+            <div class="photo-container group-photo neon-red">
+                <img src="images/group.jpeg" alt="Our Team" class="parallax-img">
+            </div>
+            <div class="info-text">
+                <h1 class="member-name">OUR TEAM</h1>
+                <p>A collective of developers dedicated to excellence.</p>
+                <p>We believe that every error is a chance for improvement.</p>
+                <p>Smart development is at the heart of everything we do.</p>
+            </div>
+        </section>
+
+        <section class="parallax-section alt">
+            <div class="photo-container individual-photo neon-white">
+                <img src="images/member1.jpeg" alt="Member 1" class="parallax-img">
+            </div>
+            <div class="info-text">
+                <h2 class="member-name">BHARATH PANDIYAN</h2>
+                <p>Backend specialist and data security expert.</p>
+                <p>Protecting the integrity of information and scale.</p>
+                <p>Optimizing servers for maximum speed and reliability.</p>
+            </div>
+        </section>
+
+        <section class="parallax-section">
+            <div class="photo-container individual-photo neon-red">
+                <img src="images/member2.jpeg" alt="Member 2" class="parallax-img">
+            </div>
+            <div class="info-text">
+                <h2 class="member-name">DIVYADEEP SINGH</h2>
+                <p>Creative front-end expert and UI/UX designer.</p>
+                <p>Making complex systems feel intuitive and beautiful.</p>
+                <p>Focusing on the user journey and visual identity.</p>
+            </div>
+        </section>
+
+        <section class="parallax-section alt">
+            <div class="photo-container individual-photo neon-white">
+                <img src="images/member3.jpeg" alt="Member 3" class="parallax-img">
+            </div>
+            <div class="info-text">
+                <h2 class="member-name">RAI DAS ADHIKARI</h2>
+                <p>Lead architect focusing on robust system design.</p>
+                <p>Ensuring that the foundation of every project is solid.</p>
+                <p>Passionate about clean code and performance.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("nav");
+
+        hamburger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.info-text').forEach(el => revealObserver.observe(el));
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.parallax-img').forEach(img => {
+                let coords = (scrolled * 0.1) % 40;
+                img.style.transform = `translateY(${coords}px) scale(1.2)`;
+            });
+        });
+
+        const cards = document.querySelectorAll('.photo-container');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `perspective(1000px) rotateY(${x * 15}deg) rotateX(${y * -15}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)`;
+            });
+        });
+    </script>
+</body>
+</html>

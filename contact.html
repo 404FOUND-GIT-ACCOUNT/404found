@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | 404 FOUND</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <p class="logo-text"><span class="res">404</span> FOUND</p>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+
+            <nav class="nav-menu" id="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="contact.html" class="active-link" style="color: #ff0000;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-section">
+        <div class="content-limit">
+            <div class="text-center-box">
+                <h1 class="main-title">GET IN <span class="res">TOUCH</span></h1>
+                <p class="description">We provide smart solutions for complex digital problems.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-methods">
+                    <div class="method-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="method-details">
+                            <h3>Email Us</h3>
+                            <p>404founddevelopers@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="method-card">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="method-details">
+                            <h3>Call Us</h3>
+                            <p>+91 8825783236</p>
+                        </div>
+                    </div>
+                    <div class="method-card">
+                        <i class="fa-brands fa-instagram"></i>
+                        <div class="method-details">
+                            <h3>Instagram</h3>
+                            <p>@404found_official</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <form class="glass-form">
+                        <div class="field">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="field">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="field">
+                            <textarea rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="glow-button">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 404 FOUND. All Rights Reserved.</p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-solid fa-phone"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("nav");
+        hamburger.onclick = () => {
+            nav.classList.toggle("show");
+            hamburger.classList.toggle("open");
+        };
+    </script>
+</body>
+</html>
